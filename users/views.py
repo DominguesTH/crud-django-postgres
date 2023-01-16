@@ -1,13 +1,12 @@
 from django.shortcuts import render, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from django.views.decorators.csrf import csrf_protect
-from django.views.decorators.csrf import requires_csrf_token
+from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 
-@requires_csrf_token
-@csrf_protect
+@csrf_exempt
 def cadastro(request):
     if request.method == 'GET':
         return render(request, 'registration/cadastro.html')
@@ -27,8 +26,7 @@ def cadastro(request):
 
         return HttpResponse('Usuário cadastrado com sucesso!')
     
-@requires_csrf_token    
-@csrf_protect
+@csrf_exempt
 def login(request):
     if request.method == 'GET':
         return render(request, 'registration/login.html' )
