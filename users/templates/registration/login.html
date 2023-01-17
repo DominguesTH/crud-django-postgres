@@ -23,7 +23,8 @@
         <img src="https://media.istockphoto.com/id/1368151370/photo/user-typing-login-and-password-cyber-security-concept.jpg?b=1&s=170667a&w=0&k=20&c=wm6YUMs03Bup4_9XcQaX61L711qJxAUExEJp_PWO8gI=" alt="">
       </div>
       <div>
-        <form action="{% url 'login' %}" method="POST"> {% csrf_token %}
+        <form action="{% url 'login' %}" method="POST"> 
+            {% csrf_token %}
           
             <div class="dados">
             <input type="text" placeholder="Username..." name="username">
