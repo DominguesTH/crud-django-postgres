@@ -6,9 +6,9 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from contas.models import Transacao
 from .form import TransacaoForm
-from django.contrib.auth.decorators import login_required
 
-@login_required
+
+
 def nova_transacao(request):
   data = {}
   form = TransacaoForm(request.POST or None)
@@ -20,7 +20,7 @@ def nova_transacao(request):
   data['form'] = form
   return render(request, 'form.html', data)
 
-@login_required
+
 def update(request, pk):
   data= dict()
   transacao = Transacao.objects.get(pk=pk)
@@ -36,13 +36,12 @@ def update(request, pk):
   return render(request, 'form.html', data)
 
 
-login_required
 def delete(request, pk):
   transacao = Transacao.objects.get(pk=pk)
   transacao.delete()
   return redirect('url_listagem')
 
-@login_required
+
 def listagem(request):
   data = {}
   data['transacoes'] = Transacao.objects.all()
