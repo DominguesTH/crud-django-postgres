@@ -3,9 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.views.decorators.csrf import csrf_exempt
 
-
 # Create your views here.
-
 @csrf_exempt
 def cadastro(request):
     if request.method == 'GET':
@@ -24,8 +22,8 @@ def cadastro(request):
         user.save()
 
 
-        return HttpResponse('Usuário cadastrado com sucesso!')
-    
+        return render(request, 'listagem.html')
+  
 @csrf_exempt
 def login(request):
     if request.method == 'GET':
