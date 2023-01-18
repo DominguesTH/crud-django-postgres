@@ -22,7 +22,7 @@ def cadastro(request):
         user.save()
 
 
-        return render(request, 'listagem.html')
+        return render(request, 'registration/usuariocriado.html')
   
 @csrf_exempt
 def login(request):
