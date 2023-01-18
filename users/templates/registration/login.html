@@ -1,49 +1,45 @@
 {% load static %}
-
-
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- STYLES -->
-  <link rel="stylesheet" href="{% static 'css/login.css' %}" />
-  <!-- FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
-  <title>Login</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <title>Login</title>
 </head>
 <body>
-  <section clas="section">
-    <div class="container grid">
-      <div class="img">
-        <img src="https://media.istockphoto.com/id/1368151370/photo/user-typing-login-and-password-cyber-security-concept.jpg?b=1&s=170667a&w=0&k=20&c=wm6YUMs03Bup4_9XcQaX61L711qJxAUExEJp_PWO8gI=" alt="">
-      </div>
-      <div>
-        <form action="{% url 'login' %}" method="POST"> 
-            {% csrf_token %}
-          
-            <div class="dados">
-            <input type="text" placeholder="Username..." name="username">
-            <input type="password" placeholder="Senha..." name="password">
-            <input class="button" type="submit" value="Logar" >
+    <div class="main-login">
+        <div class="left-login">
+            <h1>Faça login <br> E participe agora mesmo!</h1>
+            <img src="{% static 'svg/animate.svg' %}" class="left-login-image"alt="Animação de um usuário ouvindo musica enquanto trabalha.">
+        </div>
+        
+        <form action="{% url 'login' %}" method="POST" 
+        class="right-login" >
+        {% csrf_token %}
+            <div class="card-login">
+                <h1>Login</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="username"  placeholder="Username">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="password"  placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+                
+                <div class="new-user">
+                    <p>Ainda não tem uma conta?</p>
+                    <a href="{% url 'url_cadastro' %}">Criar uma conta agora.</a>
+                </div>
             </div>
-
-            <div class="new-user">
-            <p>Ainda não tem uma conta?</p>
-            <a href="{% url 'url_cadastro' %}">Criar uma conta agora.</a>
-            </div>
-
-          {% for k, v in form.errors.items %}
-              {{ v }}
-          {% endfor %}
+        {% for k, v in form.errors.items %}
+            {{ v }}
+        {% endfor %}
         </form>
-      </div>
-      </div>
+
     </div>
-  </section>
 </body>
 </html>
