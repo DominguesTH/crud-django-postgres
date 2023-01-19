@@ -1,3 +1,4 @@
 db.sqlite3
 logins.txt
 .env
+tests

@@ -8,11 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Django</title>
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
   </head>
   <body>
-    <h1>Estamos na HOME!</h1>
+    <div class="container">
+      <div class="text">
+          <h1>Bem vindo! <br> Quer ver um CRUD feito em Django?</h1>
+          <!-- <img src="{% static 'svg/animate.svg' %}" class="left-login-image"alt="Animação de um usuário ouvindo musica enquanto trabalha."> -->
+        
+          <a href="{% url 'url_login' %}">Vamos lá!</a>
+          
+      </div>
 
-    <a href="{% url 'url_login' %}">Entrar</a>
+  </div>
+
   </body>
 </html>

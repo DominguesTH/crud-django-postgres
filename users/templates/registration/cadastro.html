@@ -1,24 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/cadastro.css' %}" />
   <title>Cadastro</title>
 </head>
 <body>
-  <form action="{% url 'url_cadastro' %}" method="POST"> 
-    {% csrf_token %}
-    <input type="text" placeholder="Username..." name="username">
-    <br>
-    <br>
-    <input type="email" placeholder="Email..." name="email">
-    <br>
-    <br>
-    <input type="password" placeholder="Senha..." name="password">
-    <br>
-    <br>
-    <input type="submit" value="cadastrar" >
-  </form>
+    <div class="main-cadastro">
+        <form action="{% url 'url_cadastro' %}" method="POST" 
+        class="login" >
+        {% csrf_token %}
+            <div class="card-cadastro">
+                <h1>Cadastre-se</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="username"  placeholder="Username">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="password"  placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn-login">Cadastrar</button>
+                
+                <div class="back-login">
+                    <a href="{% url 'url_login' %}">Voltar para login</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+  
 </body>
 </html>
