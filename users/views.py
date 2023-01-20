@@ -22,7 +22,7 @@ def cadastro(request):
         user.save()
 
 
-        return render(request, 'registration/usuariocriado.html')
+        return render(request, 'registration/autenticado.html')
   
 
 def login(request):

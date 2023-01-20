@@ -30,7 +30,7 @@ body * {
 }
 
 .left-login>h1 {
-    color: #77ffc0;
+    color: #ff6915;
     font-size: 3vw;
 }
 
@@ -62,7 +62,7 @@ body * {
 }
 
 .card-login>h1 {
-    color: #00ff88;
+    color: #ff6915;
     font-weight: 800;
     margin: 0;
 }
@@ -111,9 +111,9 @@ body * {
     font-weight: 800;
     letter-spacing: 3px;
     color: #2b134b;
-    background: #00ff88;
+    background: #ff6915;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff8052;
+    box-shadow: 0px 10px 40px -12px #ff910052;
 }
 
 .new-user {
@@ -122,7 +122,7 @@ body * {
 }
 
 .new-user>a {
-    color: #00ff88;
+    color: #ff6915;
 
 
 }

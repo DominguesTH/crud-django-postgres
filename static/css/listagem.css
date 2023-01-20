@@ -7,11 +7,10 @@ body {
 
 body * {
     box-sizing: border-box;
-    overflow-y: hidden;
     overflow-x: hidden;
 }
 
-.main-cadastro {
+.container {
     width: 100vw;
     height: 100vh;
     background: #201b2c;
@@ -20,8 +19,26 @@ body * {
     align-items: center;
 }
 
-.login {
-    width: 50vw;
+.left-container {
+    width: 40vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-container>h1 {
+    color: #ff6915;
+    font-size: 2.2vw;
+}
+
+.left-container-image {
+    width: 40vw;
+}
+
+.right-container {
+    width: 60vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -30,8 +47,8 @@ body * {
 }
 
 
-.card-cadastro {
-    width: 60%;
+.card-listagem {
+    width: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +60,7 @@ body * {
 
 }
 
-.card-cadastro>h1 {
+.card-listagem>h1 {
     color: #ff6915;
     font-weight: 800;
     margin: 0;
@@ -58,18 +75,21 @@ body * {
     margin: 10px 0px;
 }
 
-.textfield>input {
+.card-listagem>ul {
     width: 100%;
-    border: none;
     border-radius: 10px;
     padding: 15px;
     background: #514869;
-    font-size: 12pt;
+    padding: 1.5rem;
+}
+
+.card-listagem>ul>li>a {
     color: #f0ffffde;
-    font-size: 12pt;
-    box-shadow: none;
-    outline: none;
-    box-sizing: border-box;
+
+}
+
+li {
+    margin-bottom: 1.5rem;
 }
 
 .textfield>label {
@@ -81,7 +101,7 @@ body * {
     color: #f0ffff94;
 }
 
-.btn-login {
+.btn-novo {
     width: 100%;
     padding: 16px 0px;
     margin: 25px;
@@ -95,31 +115,82 @@ body * {
     color: #2b134b;
     background: #ff6915;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00ff8052;
+    box-shadow: 0px 10px 40px -12px #ff910052;
+    text-align: center;
+    text-decoration: none;
 }
 
-.back-login>a {
-    color: #f0ffffde;
+.btn-novo:hover {
+    background: #ff8a15;
 }
+
+.btn-sair {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    outline: none;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #f0ffffde;
+    background: #514869;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #ffffff52;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-sair:hover {
+    background: #5f4869;
+}
+
+.new-user {
+    color: #f0ffffde;
+    text-align: center;
+}
+
+.new-user>a {
+    color: #ff6915;
+
+
+}
+
 
 
 @media only screen and (max-width: 950px) {
-    .card-login {
+    .card-listagem {
         width: 85%;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .main-cadastro {
+    .container {
         flex-direction: column;
     }
 
-    .login {
+    .left-container>h1 {
+        display: none;
+    }
+
+    .left-container {
         width: 100%;
         height: auto;
     }
 
-    .card-cadastro {
+
+    .right-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .left-container-image {
+        width: 60vw;
+    }
+
+    .card-listagem {
         width: 90%;
     }
 

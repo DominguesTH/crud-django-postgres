@@ -1,25 +1,40 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Listagem</title>
-  </head>
-  <body>
-    <h2>Listagem</h2>
-    <ul>
-      {% for transacao in transacoes %}
-      <li>
-        <a href="{% url 'url_update' transacao.id %}">
-         <strong>{{ transacao.descricao }}</strong> - {{ transacao.data}} <strong>- R${{ transacao.valor}}</strong>
-          - {{ transacao.categoria}} - {{ transacao.observacoes}}
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/listagem.css' %}" />
+    <title>CRUD Listagem</title>
+</head>
+<body>
+    <div class="container">
+        <div class="left-container">
+            <h1>Bem vindo usuario<br> Inclua algo na lista de gastos.</h1>
+            <img src="{% static 'svg/telecommuting-animate.svg' %}" class="left-container-image"alt="Animação de um usuário ouvindo musica enquanto trabalha.">
+        </div>
+        
+        <div class="right-container" >
+            <div class="card-listagem">
+                <h1>Listagem</h1>
+                <ul>
+                  {% for transacao in transacoes %}
+                  <li>
+                    <a href="{% url 'url_update' transacao.id %}">
+                     <strong>{{ transacao.descricao }}</strong> - {{ transacao.data}} <strong>- R${{ transacao.valor}}</strong>
+                      - {{ transacao.categoria}} - {{ transacao.observacoes}}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                <a href="{% url 'url_nova' %}" class="btn-novo">Novo</a>
+                <a  href="{% url 'logout' %}" type="button" class="btn-sair">Sair</a>
+                
+            </div>
 
-    <a href="{% url 'url_nova' %}">Novo</a>
-    <a href="{% url 'logout' %}">Sair</a>
-  </body>
+          </div>
+
+    </div>
+</body>
 </html>
