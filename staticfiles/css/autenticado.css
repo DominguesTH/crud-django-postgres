@@ -30,7 +30,7 @@ body * {
 }
 
 .text>h1 {
-    color: #ff6915;
+    color: #00ff88;
     font-weight: 800;
     margin: 0;
 }
@@ -39,4 +39,29 @@ body * {
     color: #f0ffffde;
     font-size: 2rem;
     padding: 2rem;
+}
+
+@media only screen and (max-width: 950px) {
+    .card-login {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .text {
+        width: 85%;
+        height: auto;
+    }
+
+    .text>a {
+        width: 85%;
+        color: #f0ffffde;
+        font-size: 1.2rem;
+        padding: 2rem;
+    }
+
 }
