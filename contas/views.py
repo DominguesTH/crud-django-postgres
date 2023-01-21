@@ -19,7 +19,7 @@ def nova_transacao(request):
     return redirect('url_listagem')
 
   data['form'] = form
-  return render(request, 'form.html', data)
+  return render(request, 'novo-item.html', data)
 
 @login_required
 def update(request, pk):

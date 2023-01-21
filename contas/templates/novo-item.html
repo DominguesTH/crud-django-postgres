@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/novo-item.css' %}" />
+    <title>Novo Item</title>
+</head>
+<body>
+    <div class="container">
+
+      <div class="left-container">
+        <h1>Cadastre ou Edite seu item.</h1>
+        <img src="{% static 'svg/lo-fi-concept-animate.svg' %}" class="left-container-image"alt="Animação de um usuário ouvindo musica enquanto trabalha.">
+      </div>
+
+      <div class="right-container" >
+        <div class="card-form">
+          <h1>Informações</h1>
+          <form method="POST" >
+            {% csrf_token %} {{ form.as_p}}
+            <button type="submit" class="btn-novo">Salvar</button>
+            {% if transacao%}
+            <a href="{% url 'url_delete' transacao.id %}">Remover</a>
+            {% endif %}
+          </form>
+            <a  href="{% url 'url_listagem'%}" type="button" class="btn-sair">Voltar</a>
+            
+        </div>
+      </div>
+      
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+<form action="{% url 'login' %}" method="POST" 
+        class="right-login" >
+        {% csrf_token %}
+            <div class="card-login">
+                <h1>Login</h1>
+                <div class="textfield">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="username"  placeholder="Username">
+                </div>
+                <div class="textfield">
+                    <label for="senha">Senha</label>
+                    <input type="password" name="password"  placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn-login">Login</button>
+                
+                <div class="new-user">
+                    <p>Ainda não tem uma conta?</p>
+                    <a href="{% url 'url_cadastro' %}">Criar uma conta agora.</a>
+                </div>
+            </div>
+        {% for k, v in form.errors.items %}
+            {{ v }}
+        {% endfor %}
+        </form> -->

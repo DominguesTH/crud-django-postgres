@@ -11,7 +11,7 @@ body * {
     overflow-x: hidden;
 }
 
-.main-login {
+.container {
     width: 100vw;
     height: 100vh;
     background: #201b2c;
@@ -20,7 +20,7 @@ body * {
     align-items: center;
 }
 
-.left-login {
+.left-container {
     width: 50vw;
     height: 100vh;
     display: flex;
@@ -29,17 +29,17 @@ body * {
     flex-direction: column;
 }
 
-.left-login>h1 {
+.left-container>h1 {
     color: #ff6915;
     font-size: 3vw;
 }
 
-.left-login-image {
+.left-container-image {
     width: 35vw;
 }
 
-.right-login {
-    width: 50vw;
+.right-container {
+    width: 60vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -48,7 +48,7 @@ body * {
 }
 
 
-.card-login {
+.card-form {
     width: 60%;
     display: flex;
     justify-content: center;
@@ -58,25 +58,43 @@ body * {
     background: #2f2841;
     border-radius: 20px;
     box-shadow: 0px 10px 40px #00000056;
-
+    flex-flow: wrap;
+    overflow-y: auto;
+    margin: 2rem 0rem 2rem 0rem;
 }
 
-.card-login>h1 {
+::-webkit-scrollbar {
+    background-color: red;
+    width: 0.7rem;
+    border-radius: 2rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #201b2c;
+    border-radius: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff6915;
+    border-radius: 2rem;
+}
+
+
+.card-form>h1 {
     color: #ff6915;
     font-weight: 800;
     margin: 0;
 }
 
-.textfield {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 10px 0px;
+form {
+    background-color: red;
+    display: contents;
 }
 
-.textfield>input {
+textarea,
+input,
+select {
+    background-color: red;
     width: 100%;
     border: none;
     border-radius: 10px;
@@ -90,34 +108,76 @@ body * {
     box-sizing: border-box;
 }
 
-.textfield>label {
+select::placeholder {
+    border-radius: 2rem;
+}
+
+select>option {
+    border-radius: 2rem;
+    color: #f0ffffde;
+}
+
+label {
     color: #f0ffffde;
     margin-bottom: 10px;
 }
 
-.textfield>input::placeholder {
-    color: #f0ffff94;
+
+form>p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+    color: #f0ffffde;
 }
 
-.btn-login {
+.btn-novo {
     width: 100%;
     padding: 16px 0px;
-    margin: 25px;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
     border: none;
     border-radius: 8px;
     outline: none;
     text-transform: uppercase;
-    outline: none;
     font-weight: 800;
     letter-spacing: 3px;
     color: #2b134b;
     background: #ff6915;
     cursor: pointer;
     box-shadow: 0px 10px 40px -12px #ff910052;
+    text-align: center;
+    text-decoration: none;
+    display: inline-table;
 }
 
-.btn-login:hover {
+.btn-novo:hover {
     background: #ff8a15;
+}
+
+.btn-sair {
+    width: 100%;
+    padding: 16px 0px;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #f0ffffde;
+    background: #514869;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #ffffff52;
+    text-align: center;
+    text-decoration: none;
+    display: inline-table;
+}
+
+.btn-sair:hover {
+    background: #5f4869;
 }
 
 .new-user {
@@ -136,36 +196,38 @@ li {
 }
 
 @media only screen and (max-width: 950px) {
-    .card-login {
+    .card-form {
         width: 85%;
     }
+
+
 }
 
 @media only screen and (max-width: 600px) {
-    .main-login {
+    .container {
         flex-direction: column;
     }
 
-    .left-login>h1 {
+    .left-container>h1 {
         display: none;
     }
 
-    .left-login {
+    .left-container {
         width: 100%;
         height: auto;
     }
 
 
-    .right-login {
+    .right-container {
         width: 100%;
         height: auto;
     }
 
-    .left-login-image {
+    .left-container-image {
         width: 60vw;
     }
 
-    .card-login {
+    .card-form {
         width: 90%;
     }
 
