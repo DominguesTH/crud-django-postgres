@@ -35,16 +35,39 @@ body * {
     margin: 0;
 }
 
-
-.text>a {
-    color: #f0ffffde;
-    font-size: 2rem;
-    padding: 2rem;
+.links {
     display: inline-flex;
     align-items: center;
 }
 
+.fa-chrome {
+    color: #ff6915;
+    padding: 1rem;
+}
 
+.fa-linkedin-in {
+    padding: 1rem;
+    color: #0A66C2;
+
+}
+
+.fa-github {
+    color: #F0F6FC;
+    padding: 1rem;
+}
+
+.links>a {
+    color: #f0ffffde;
+    font-size: 1rem;
+    padding: 2rem;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.back-login>a {
+    color: #ff6915;
+}
 
 
 @media only screen and (max-width: 950px) {
@@ -56,12 +79,25 @@ body * {
         width: 80vw;
         text-align: center;
     }
+
+    .links {
+        display: grid;
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+
+    .links>a {
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
 }
 
 @media only screen and (max-width: 600px) {
     .container {
         flex-direction: column;
     }
+
+
 
     .text {
         width: 100%;

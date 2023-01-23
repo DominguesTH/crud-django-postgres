@@ -133,7 +133,7 @@ form>p {
     color: #f0ffffde;
 }
 
-.btn-novo {
+.btn-salvar {
     width: 100%;
     padding: 16px 0px;
     margin-bottom: 1rem;
@@ -153,8 +153,31 @@ form>p {
     display: inline-table;
 }
 
-.btn-novo:hover {
+.btn-salvar:hover {
     background: #ff8a15;
+}
+
+.btn-remover {
+    width: 100%;
+    padding: 16px 0px;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    color: #f0ffffde;
+    background: #ec2424cd;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #ffffff52;
+    text-align: center;
+    text-decoration: none;
+    display: inline-table;
+}
+
+.btn-remover:hover {
+    background: #ff5656;
 }
 
 .btn-sair {
