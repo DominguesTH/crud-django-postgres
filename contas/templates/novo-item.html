@@ -6,13 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/novo-item.css' %}" />
-    <title>Novo Item</title>
+    {% if transacao%}
+      <title>Editar Item</title>
+    {% else %}
+      <title>Novo item</title>
+    {% endif %}
 </head>
 <body>
     <div class="container">
 
       <div class="left-container">
-        <h1>Cadastre ou Edite seu item.</h1>
+        {% if transacao%}
+          <h1>Edite seu item.</h1>
+      {% else %}
+          <h1>Cadastre seu item.</h1>
+      {% endif %}
         <img src="{% static 'svg/lo-fi-concept-animate.svg' %}" class="left-container-image"alt="Animação de um usuário ouvindo musica enquanto trabalha.">
       </div>
 
@@ -21,9 +29,9 @@
           <h1>Informações</h1>
           <form method="POST" >
             {% csrf_token %} {{ form.as_p}}
-            <button type="submit" class="btn-novo">Salvar</button>
+            <button type="submit" class="btn-salvar">Salvar</button>
             {% if transacao%}
-            <a href="{% url 'url_delete' transacao.id %}">Remover</a>
+              <a href="{% url 'url_delete' transacao.id %}" type="button" class="btn-remover" >Remover</a>
             {% endif %}
           </form>
             <a  href="{% url 'url_listagem'%}" type="button" class="btn-sair">Voltar</a>

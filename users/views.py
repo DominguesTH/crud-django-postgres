@@ -36,3 +36,7 @@ def login(request):
 
     if user == 'None':
         return HttpResponse('Email ou Senha invalidos')
+
+
+def logout(request):
+    return render(request, 'registration/logout.html')

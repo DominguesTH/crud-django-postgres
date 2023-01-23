@@ -102,7 +102,7 @@ DATABASES = {
     }
 }
 
-
+#DATABASE
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -146,5 +146,5 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGOUT_REDIRECT_URL = 'url_home'
+LOGOUT_REDIRECT_URL = 'url_logout'
 LOGIN_REDIRECT_URL = 'url_listagem'

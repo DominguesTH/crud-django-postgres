@@ -1,12 +1,13 @@
 from django.shortcuts import render
 
 # Create your views here.
-
+from django.contrib.auth.models import User
 from django.shortcuts import render
 from django.shortcuts import render, redirect
 from contas.models import Transacao
 from .form import TransacaoForm
 from django.contrib.auth.decorators import login_required
+
 
 
 @login_required
@@ -34,7 +35,7 @@ def update(request, pk):
 
   data['form'] = form
   data['transacao'] = transacao
-  return render(request, 'form.html', data)
+  return render(request, 'novo-item.html', data)
 
 @login_required
 def delete(request, pk):
@@ -44,6 +45,6 @@ def delete(request, pk):
 
 @login_required
 def listagem(request):
-  data = {}
-  data['transacoes'] = Transacao.objects.all()
-  return render(request, 'listagem.html', data)
+  user = User.objects.all()
+  data = Transacao.objects.all()
+  return render(request, 'listagem.html', {"usuario" : user, "transacoes" : data })

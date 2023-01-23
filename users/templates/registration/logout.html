@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/302fb988c7.js" crossorigin="anonymous"></script>
+    <title>Até Mais!</title>
+
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="text">
+            <h1>Obrigado por chegar até aqui! <br>Gostou? Deixa um feeback no meu linkedin.</h1> 
+          <div class="links">
+                <a href="https://www.linkedin.com/in/thiagodomingues-/" target="_blank"><i class="fa-brands fa-linkedin-in"></i>linkedin</a>
+                <a href="https://github.com/DominguesTH" target="_blank"><i class="fa-brands fa-github"></i></i>GitHub</a>
+                <a href="https://dominguesth.github.io/MeuPortifolio/" target="_blank"><i class="fa-brands fa-chrome"></i>Portfólio</a>
+        </div>
+        <div class="back-login">
+            <a href="{% url 'url_login' %}">Voltar para login</a>
+        </div>
+      </div>
+
+  </div>
+
+  </body>
+
+</html>
