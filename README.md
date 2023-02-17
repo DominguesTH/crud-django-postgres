@@ -10,7 +10,7 @@
  ### Descrição
 > Um CRUD básico de cadastros de itens para gestão financeira feito em python utilizando o framework django e deploy feito na railway, um excelente cloud com opção free para substituir o heroku. Também utilizei o banco de dados postgreSQL. No front-end usei HTML e CSS, o suficiente para deixar o projeto bem elegante. 
 
-### observações
+### Observações
 > Esse projeto está em um servidor gratuito que me disponibiliza algumas horas gratuitas por mes de consumo, oque significa que se por um acaso você acessar o projeto e ele não estiver no ar, existe uma grande chance das horas terem se esgotado no servidor. Neste caso, baixe o repositório ou espere até o mês seguinte até que ele esteja no ar novamente.
 
 # Tecnologias utilizadas
